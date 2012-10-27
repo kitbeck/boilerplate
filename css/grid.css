@@ -16,7 +16,7 @@ body {
 
 [class*='span-'] {
 	float: left;
-	padding-right: 20px;
+	padding-right: 50px;
 }
 
 [class*='span-']:last-of-type {
@@ -38,11 +38,11 @@ body {
 }
 
 .row-pad {
-	padding: 20px 0 0 20px;
+	padding: 20px 0 20px 50px;
 }
 
 .row-pad > [class*='span-']:last-of-type {
-	padding-right: 20px;
+	padding-right: 50px;
 }
 
 /* Content spans */
