@@ -16,7 +16,7 @@ body {
 
 [class*='span-'] {
 	float: left;
-	padding-right: 50px;
+	padding-right: 10px;
 }
 
 [class*='span-']:last-of-type {
@@ -24,7 +24,7 @@ body {
 }
 
 .row {
-	width: 100%;
+	width: 90%;
 	max-width: 100%;
 	min-width: 755px;
 	margin: 0 auto;
@@ -38,20 +38,17 @@ body {
 }
 
 .row-pad {
-	padding: 20px 0 20px 50px;
+	padding: 10px 0 0 10px;
 }
 
 .row-pad > [class*='span-']:last-of-type {
-	padding-right: 50px;
+	padding-right: 10px;
 }
 
 /* Content spans */
 
-.span-1-1 {
+.span-1 {
 	width: 100%;
-}
-.span-2-3 {
-	width: 66.66%;
 }
 
 .span-1-2 {
@@ -96,6 +93,10 @@ body {
 
 .span-1-12 {
 	width: 8.33%
+}
+
+.span-2-3 {
+	width: 66.66%;
 }
 
 /* Layout spans */
@@ -167,7 +168,7 @@ body {
 		margin-right: 0px;
 		margin-top: 10px;
 		margin-bottom: 10px;
-		padding-left: 20px;
-		padding-right: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 }
