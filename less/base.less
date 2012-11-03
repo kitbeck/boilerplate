@@ -6,10 +6,6 @@
 
 ========================================================================== */
 
-  @import "mixins.less";
-  @import "grid.less";
-  @import "custom.less";
-
   // Global Defaults
 
   // Typography
@@ -21,25 +17,22 @@
   @defaultFontSize:       14;
   @fontDefault:           @defaultFontSize / 16 * 100%; // works out your base font size in percent
 
-  @12px:                  12 / @defaultFontSize * 1em;
-  @13px:                  13 / @defaultFontSize * 1em;
-  @14px:                  14 / @defaultFontSize * 1em;
-  @16px:                  16 / @defaultFontSize * 1em;
-  @18px:                  18 / @defaultFontSize * 1em;
-  @20px:                  20 / @defaultFontSize * 1em;
-  @22px:                  22 / @defaultFontSize * 1em;
-  @26px:                  26 / @defaultFontSize * 1em;
+  @42px:                  42 / @defaultFontSize * 1em;
+  @35px:                  35 / @defaultFontSize * 1em;
   @28px:                  28 / @defaultFontSize * 1em;
-  @36px:                  36 / @defaultFontSize * 1em;
-  @40px:                  40 / @defaultFontSize * 1em;
-
+  @21px:                  21 / @defaultFontSize * 1em;
+  @14px:				  14 / @defaultFontSize * 1em;
+  @7px:					  7  / @defaultFontSize * 1em;	
+  
   // Headings
   @headingFont:           "Georgia", "Times New Roman", sans-serif;
 
-  @h1:                    @40px;
-  @h2:                    @20px;
-  @h3:                    @26px;
-  @h4:                    @20px;
+  @h1:                    @42px;
+  @h2:                    @35px;
+  @h3:                    @28px;
+  @h4:                    @21px;
+  @h5:					  @14px;
+  @h6:					  @7px;
 
   // Colours
 
@@ -187,6 +180,14 @@ h4 {
     font-size: @h4;
     margin: 14px 0 14px 0;
 }
+h5 {
+    font-size: @h5;
+    margin: 14px 0 14px 0;
+}
+h6 {
+    font-size: @h6;
+    margin: 14px 0 14px 0;
+}
 
 
 /* 1.2 Paragraphs, block quotes, code, pre, etc
@@ -315,7 +316,6 @@ table tbody tr:nth-child(even) th {
     background-color: #ffffff;
 }
 
-table tbody .odd td,
 table tbody .odd td {
     background-color: #f1f1f1;
 }
