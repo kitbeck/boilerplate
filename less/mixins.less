@@ -1,31 +1,310 @@
-// ==========================================================================
+// ==========================================================
 
-//  Base Mixins - built with LESS - http://www.lesscss.org
-//  Theme URI: http://matthewhartman.github.com/base/
-//  Author: Matthew Hartman - http://www.matthewhartman.com.au/
-//  Version: 0.1 - Last Updated: 18th October, 2012
+// 320 and Up by Andy Clarke
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
-// ==========================================================================
+// ==========================================================
 
+/* Mixins =================================================== */
 
-// Font Icon
-.font-icon (@fontname, @fontfile) {
-  @font-face {
-    font-family: @fontname;
-    src: url('fonts/@{fontfile}-webfont.eot');
-    src: url('fonts/@{fontfile}-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/@{fontfile}-webfont.woff') format('woff'),
-         url('fonts/@{fontfile}-webfont.ttf') format('truetype'),
-         url('fonts/@{fontfile}-webfont.svg#@{fontfile}') format('svg');
-    font-weight: normal;
-    font-style: normal;
-  }
-}
+// 1. ROOT 					==============================
+// 2. TYPOGRAPHY 			==============================
 
-// Border Rounded Corners
-.roundedcorners(@radius: 1px) {
--webkit-border-radius: @radius;
--moz-border-radius: @radius;
-border-radius: @radius;
--moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+.font-size(@font-size: 16){
+@rem: (@font-size / 10);
+font-size : @font-size * 1px;
+font-size : ~"@{rem}rem"; }
+
+.text-overflow() {
+overflow : hidden;
+text-overflow : ellipsis;
+white-space : nowrap; }
+
+// 3. COLOUR 				==============================
+// 4. TEXTURE 				==============================
+
+// gradients
+
+.horizontal(@startColor : @white, @endColor : @lightergrey) {
+background-color: @endColor;
+background-image  : -webkit-gradient(linear, 0 0, 100% 0, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+background-image  : -webkit-linear-gradient(left, @startColor, @endColor); 					 // Safari 5.1+, Chrome 10+
+background-image  : -moz-linear-gradient(left, @startColor, @endColor); 					 // FF 3.6+
+background-image  : -ms-linear-gradient(left, @startColor, @endColor); 						 // IE10
+background-image  : -o-linear-gradient(left, @startColor, @endColor); 						 // Opera 11.10
+background-image  : linear-gradient(left, @startColor, @endColor); 							 // W3C
+background-repeat : repeat-x; }
+
+.vertical(@startColor : @white, @endColor:  @lightergrey) {
+background-image  : -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+background-image  : -webkit-linear-gradient(top, @startColor, @endColor); 					 // Safari 5.1+, Chrome 10+
+background-color  : @endColor;
+background-image  : -moz-linear-gradient(top, @startColor, @endColor);   					 // FF 3.6+
+background-image  : -ms-linear-gradient(top, @startColor, @endColor); 						 // IE10
+background-image  : -o-linear-gradient(top, @startColor, @endColor); 						 // Opera 11.10
+background-image  : linear-gradient(top, @startColor, @endColor); 							 // W3C
+background-repeat : repeat-x; }
+
+.directional(@startColor : @white, @endColor : @lightergrey, @deg : 45deg) {
+background-color  : @endColor;
+background-image  : -moz-linear-gradient(@deg, @startColor, @endColor); 					// FF 3.6+
+background-image  : -ms-linear-gradient(@deg, @startColor, @endColor); 						// IE10
+background-image  : -webkit-linear-gradient(@deg, @startColor, @endColor); 					// Safari 5.1+, Chrome 10+
+background-image  : -o-linear-gradient(@deg, @startColor, @endColor); 						// Opera 11.10
+background-image  : linear-gradient(@deg, @startColor, @endColor); 							// W3C
+background-repeat : repeat-x; }
+
+// .bordered(COLOR, COLOR, COLOR, COLOR);
+
+.bordered(@top-color: #eee, @right-color: #eee, @bottom-color: #eee, @left-color: #eee) {
+border-top : solid 1px @top-color;
+border-left : solid 1px @left-color;
+border-right : solid 1px @right-color;
+border-bottom : solid 1px @bottom-color; }
+
+// .rounded(VALUE);
+
+.rounded(@radius:4px) {
+-webkit-border-radius : @radius;
+-moz-border-radius : @radius;
+border-radius : @radius; }
+
+// .border-radius(VALUE,VALUE,VALUE,VALUE);
+
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+-webkit-border-top-right-radius : @topright;
+-webkit-border-bottom-right-radius : @bottomright;
+-webkit-border-bottom-left-radius : @bottomleft;
+-webkit-border-top-left-radius : @topleft;
+-moz-border-radius-topright : @topright;
+-moz-border-radius-bottomright : @bottomright;
+-moz-border-radius-bottomleft : @bottomleft;
+-moz-border-radius-topleft : @topleft;
+border-top-right-radius : @topright;
+border-bottom-right-radius : @bottomright;
+border-bottom-left-radius : @bottomleft;
+border-top-left-radius : @topleft;
+-webkit-background-clip : padding-box;
+-moz-background-clip : padding;  
+background-clip : padding-box; }
+
+// .box-shadow(HORIZONTAL VERTICAL BLUR COLOR))
+
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+-webkit-box-shadow : @shadow;
+-moz-box-shadow : @shadow;
+box-shadow : @shadow; }
+
+// .drop-shadow(HORIZONTAL, VERTICAL, BLUR, ALPHA);
+
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+-webkit-box-shadow : @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+-moz-box-shadow : @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+box-shadow : @x-axis @y-axis @blur rgba(0, 0, 0, @alpha); }
+
+// .opacity(VALUE);
+
+.opacity(@opacity : .5) {
+-webkit-opacity : @opacity;
+-moz-opacity : @opacity;
+opacity : @opacity; }
+
+// .rotate(VALUEdeg);
+
+.rotate(@deg) {
+-webkit-transform : rotate(@deg);
+-moz-transform : rotate(@deg);
+-ms-transform : rotate(@deg);
+-o-transform : rotate(@deg);
+transform : rotate(@deg); }
+
+// .scale(VALUE);
+
+.scale(@ratio) {
+-webkit-transform : scale(@ratio);
+-moz-transform : scale(@ratio);
+-ms-transform : scale(@ratio);
+-o-transform : scale(@ratio);
+transform : scale(@ratio); }
+
+// .skew(VALUE, VALUE);
+
+.skew(@x: 0, @y: 0) {
+-webkit-transform : skew(@x, @y);
+-moz-transform : skew(@x, @y);
+-ms-transform : skew(@x, @y);
+-o-transform : skew(@x, @y);
+transform : skew(@x, @y); }
+
+// .transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
+
+.transition(@transition) {
+-webkit-transition : @transition;
+-moz-transition : @transition;
+-ms-transition : @transition;
+-o-transition : @transition;
+transition : @transition; }
+
+// .translate(VALUE, VALUE)
+
+.translate(@x: 0, @y: 0) {
+-webkit-transform : translate(@x, @y);
+-moz-transform : translate(@x, @y);
+-ms-transform : translate(@x, @y);
+-o-transform : translate(@x, @y);
+transform : translate(@x, @y); }
+
+.translate3d(@x: 0, @y: 0, @z: 0) {
+-webkit-transform : translate(@x, @y, @z);
+-moz-transform : translate(@x, @y, @z);
+-ms-transform : translate(@x, @y, @z);
+-o-transform : translate(@x, @y, @z);
+transform : translate(@x, @y, @z); }
+
+// 5. ELEMENTS 				==============================
+
+// .background-alpha(VALUE VALUE);
+
+.background-alpha(@color: @white, @alpha: 1) {
+background-color : hsla(hue(@color), saturation(@color), lightness(@color), @alpha); }
+
+// .background-size(VALUE VALUE);
+
+.background-size(@size){
+-webkit-background-size : @size;
+-moz-background-size : @size;
+-o-background-size : @size;
+background-size : @size; }
+
+// .background-clip(VALUE); (border-box, padding-box, content-box)
+
+.background-clip(@clip) {
+-webkit-background-clip : @clip;
+-moz-background-clip : @clip;
+background-clip : @clip; }
+
+// .box-sizing(VALUE); (border-box, padding-box, content-box)
+
+.box-sizing(@boxsize: border-box) {
+-webkit-box-sizing : @boxsize;
+-moz-box-sizing : @boxsize;
+-ms-box-sizing : @boxsize;
+box-sizing : @boxsize; }
+
+// Chrome Frame
+
+.chromeframe() { 
+margin : .2em 0; 
+background : @lightgrey; 
+color : @black; 
+padding : .2em 0; }
+
+// Contain floats
+
+.clearfix {
+*zoom : 1;
+&:before,
+&:after {
+display: table;
+content : ""; }
+&:after {
+clear : both; } }
+
+// For image replacement
+
+.hide-text() {
+text-indent : 100%;
+white-space : nowrap;
+overflow : hidden; }
+
+// Hide from visual and speaking browsers
+
+.hidden() {
+display : none !important; 
+visibility : hidden; }
+
+// Hide but maintain layout
+
+.invisible() { 
+visibility : hidden; }
+
+// .resize(VALUE) (none, both, horizontal, vertical, inherit)
+
+.resize(@direction: both) {
+resize : @direction;
+overflow : auto; }
+
+// .userselect(VALUE) (all, element, none, text)
+
+.user-select(@select) {
+-webkit-user-select : @select;
+-moz-user-select : @select;
+-o-user-select : @select;
+user-select : @select; }
+
+// Hidden but available to speaking browsers
+
+.visuallyhidden() { 
+overflow : hidden; 
+position : absolute;
+clip : rect(0 0 0 0); 
+height : 1px; 
+width : 1px;
+margin : -1px; 
+padding : 0; 
+border : 0; }
+
+// Make visuallyhidden focusable with a keyboard
+
+.visuallyhidden.focusable:active, 
+.visuallyhidden.focusable:focus { 
+position : static;
+clip : auto; 
+height : auto; 
+width : auto;
+margin : 0; 
+overflow: visible; }
+
+// 6. LAYOUT 				============================== 
+
+// .columns(250px, 0, 24px, COLOR, solid, 1px)
+
+.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #eee, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+-webkit-column-width : @colwidth;
+-webkit-column-count : @colcount;
+-webkit-column-gap : @colgap;
+-webkit-column-rule-color : @columnRuleColor;
+-webkit-column-rule-style : @columnRuleStyle;
+-webkit-column-rule-width : @columnRuleWidth;
+-moz-column-width : @colwidth;
+-moz-column-count : @colcount;
+-moz-column-gap : @colgap;
+-moz-column-rule-color : @columnRuleColor;
+-moz-column-rule-style : @columnRuleStyle;
+-moz-column-rule-width : @columnRuleWidth;
+column-width : @colwidth;
+column-count : @colcount;
+column-gap : @colgap;
+column-rule-color : @columnRuleColor;
+column-rule-style : @columnRuleStyle;
+column-rule-width : @columnRuleWidth; }
+
+//  7. VENDOR-SPECIFIC 		==============================
+//  8. MODERNIZR 			==============================
+//  9. TEMPLATE SPECIFICS 	==============================
+
+.noise (@opacity: .3) {
+	&:before {
+		bottom: 0;
+		content: "";
+		left: 0;
+		opacity: @opacity;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQErwSOMzt/XWRWAz5GuSBIkwG1H3FabJ2OsUOUhGC6tK4EMtJO0ttC6IBD3kM0ve0tJwMdSfjZo+EEISaeTr9P3wYrGjXqyC1krcKdhMpxEnt5JetoulscpyzhXN5FRpuPHvbeQaKxFAEB6EN+cYN6xD7RYGpXpNndMmZgM5Dcs3YSNFDHUo2LGfZuukSWyUYirJAdYbF3MfqEKmjM+I2EfhA94iG3L7uKrR+GdWD73ydlIB+6hgref1QTlmgmbM3/LeX5GI1Ux1RWpgxpLuZ2+I+IjzZ8wqE4nilvQdkUdfhzI5QDWy+kw5Wgg2pGpeEVeCCA7b85BO3F9DzxB3cdqvBzWcmzbyMiqhzuYqtHRVG2y4x+KOlnyqla8AoWWpuBoYRxzXrfKuILl6SfiWCbjxoZJUaCBj1CjH7GIaDbc9kqBY3W/Rgjda1iqQcOJu2WW+76pZC9QG7M00dffe9hNnseupFL53r8F7YHSwJWUKP2q+k7RdsxyOB11n0xtOvnW4irMMFNV4H0uqwS5ExsmP9AxbDTc9JwgneAT5vTiUSm1E7BSflSt3bfa1tv8Di3R8n3Af7MNWzs49hmauE2wP+ttrq+AsWpFG2awvsuOqbipWHgtuvuaAE+A1Z/7gC9hesnr+7wqCwG8c5yAg3AL1fm8T9AZtp/bbJGwl1pNrE7RuOX7PeMRUERVaPpEs+yqeoSmuOlokqw49pgomjLeh7icHNlG19yjs6XXOMedYm5xH2YxpV2tc0Ro2jJfxC50ApuxGob7lMsxfTbeUv07TyYxpeLucEH1gNd4IKH2LAg5TdVhlCafZvpskfncCfx8pOhJzd76bJWeYFnFciwcYfubRc12Ip/ppIhA1/mSZ/RxjFDrJC5xifFjJpY2Xl5zXdguFqYyTR1zSp1Y9p+tktDYYSNflcxI0iyO4TPBdlRcpeqjK/piF5bklq77VSEaA+z8qmJTFzIWiitbnzR794USKBUaT0NTEsVjZqLaFVqJoPN9ODG70IPbfBHKK+/q/AWR0tJzYHRULOa4MP+W/HfGadZUbfw177G7j/OGbIs8TahLyynl4X4RinF793Oz+BU0saXtUHrVBFT/DnA3ctNPoGbs4hRIjTok8i+algT1lTHi4SxFvONKNrgQFAq2/gFnWMXgwffgYMJpiKYkmW3tTg3ZQ9Jq+f8XN+A5eeUKHWvJWJ2sgJ1Sop+wwhqFVijqWaJhwtD8MNlSBeWNNWTa5Z5kPZw5+LbVT99wqTdx29lMUH4OIG/D86ruKEauBjvH5xy6um/Sfj7ei6UUVk4AIl3MyD4MSSTOFgSwsH/QJWaQ5as7ZcmgBZkzjjU1UrQ74ci1gWBCSGHtuV1H2mhSnO3Wp/3fEV5a+4wz//6qy8JxjZsmxxy5+4w9CDNJY09T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg==);
+	}
 }
