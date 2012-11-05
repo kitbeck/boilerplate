@@ -41,7 +41,7 @@
 .header{
 	min-height: 100px;
 	height: 100%;
-	padding: 0 60px;
+	padding: 0;
 	background: #ffffff;
 }
 
@@ -55,15 +55,15 @@
 }
 
 .nav, .menu { 
-	display: block; 
-	float: right; 
+	display: block;	float: right;
+	margin: 0;
 }
 
-.nav, .menu, .menu > li, .menu > li > a{ 
+.nav, .menu, .menu > li, .menu > li > a { 
 	height: 100%; 
 }
 
-.menu > li > a{
+.menu > li > a {
 	display: block;
 	padding: 20px 20px;
 	text-decoration: none;
@@ -72,64 +72,61 @@
 	line-height: 1;
 }
 
-.menu > li > a:hover, .menu > li > a:focus{
-	color: @green;
+.menu > li > a:hover, .menu > li > a:focus {
+	color: @lightGreen;
 }
 
-.toggle{ 
+.toggle { 
 	z-index: 2; 
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
 	.menu{
 		background: #ffffff;
-		border-top: 1px solid #51C1F1;
+		.box-shadow();
 	}
 	
-	.menu, .menu > li, .menu > li > a{
+	.menu, .menu > li, .menu > li > a {
 		height: auto;
 	}
 	
-	.menu > li > a{
-		padding: 15px 15px;
+	.menu > li > a {
+		padding: 14px;
 	}
 	
-	.menu > li > a:hover, .menu > li > a:focus{
-		background: #f2f2f2;
-		box-shadow: inset 5px 0px #51C1F1;
-		padding: 15px 15px 15px 25px;
+	.menu > li > a:hover, .menu > li > a:focus {
 	}
 	
 	.toggle:after {
 		content: 'Menu';
 		display: block;
-		width: 200px;
-		margin: 33px 0;
-		padding: 10px 50px;
-		background: @lightOrange;
-		text-align: center;
-		font-size: 12px;
-		color: #ffffff;
-		float: right;
-	}
-	
-	.toggle:hover:after{
+		width: 100px;
+		margin: 14px;
+		padding: 14px;
 		background: @orange;
+		text-align: center;
+		font-size: 16px;
+		color: #ffffff;
 	}
 	
-	#toggle:checked + .toggle:after{
+	.toggle:hover:after {
+		background: @darkGreen;
+	}
+	
+	#toggle:checked + .toggle:after {
 		content: 'Close';
 	}
 }
 
-@media only screen and (max-width: 479px){
+@media only screen and (max-width: 479px) {
 	.header > h1 { 
 		text-align: center;
 	}
-	.header > h1, .nav, .toggle:after{ 
-		float: none; 
+	.header > h1, .nav, .toggle:after { 
+		float: none;
 	}
 	.toggle:after { 
-		text-align: center; width: 100%; 
+		width: auto; margin-right: 14px;
+		text-align: center; 
 	}
 }

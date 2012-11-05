@@ -816,7 +816,7 @@ select:focus {
 .header {
   min-height: 100px;
   height: 100%;
-  padding: 0 60px;
+  padding: 0;
   background: #ffffff;
 }
 .header > h1 {
@@ -831,6 +831,7 @@ select:focus {
 .menu {
   display: block;
   float: right;
+  margin: 0;
 }
 .nav,
 .menu,
@@ -848,7 +849,7 @@ select:focus {
 }
 .menu > li > a:hover,
 .menu > li > a:focus {
-  color: #00ff00;
+  color: #1aff1a;
 }
 .toggle {
   z-index: 2;
@@ -856,7 +857,9 @@ select:focus {
 @media only screen and (max-width: 768px) {
   .menu {
     background: #ffffff;
-    border-top: 1px solid #51C1F1;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   }
   .menu,
   .menu > li,
@@ -864,28 +867,21 @@ select:focus {
     height: auto;
   }
   .menu > li > a {
-    padding: 15px 15px;
-  }
-  .menu > li > a:hover,
-  .menu > li > a:focus {
-    background: #f2f2f2;
-    box-shadow: inset 5px 0px #51C1F1;
-    padding: 15px 15px 15px 25px;
+    padding: 14px;
   }
   .toggle:after {
     content: 'Menu';
     display: block;
-    width: 200px;
-    margin: 33px 0;
-    padding: 10px 50px;
-    background: #ff9980;
+    width: 100px;
+    margin: 14px;
+    padding: 14px;
+    background: #ff3300;
     text-align: center;
-    font-size: 12px;
+    font-size: 16px;
     color: #ffffff;
-    float: right;
   }
   .toggle:hover:after {
-    background: #ff3300;
+    background: #00e600;
   }
   #toggle:checked + .toggle:after {
     content: 'Close';
@@ -901,8 +897,9 @@ select:focus {
     float: none;
   }
   .toggle:after {
+    width: auto;
+    margin-right: 14px;
     text-align: center;
-    width: 100%;
   }
 }
 .content {
