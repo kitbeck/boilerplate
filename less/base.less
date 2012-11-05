@@ -37,27 +37,28 @@
   // Colours
 
   @black:                 #000;
-  @darkestGrey:           #111;
-  @darkerGrey:            #333;
-  @darkGrey:              #666;
-  @grey:                  #999;
-  @lightGrey:             #ddd;
-  @lighterGrey:           #eee;
-  @lightestGrey:          #f1f1f1;
+  @darkestGrey:           lighten(@black, 10%);
+  @darkerGrey:            lighten(@black, 20%);
+  @darkGrey:              lighten(@black, 30%);
+  @grey:                  lighten(@black, 40%);
+  @lightGrey:             lighten(@black, 50%);
+  @lighterGrey:           lighten(@black, 60%);
+  @lightestGrey:          lighten(@black, 70%);
   @white:                 #fff;
 
-  @darkestBlue:           #0f1b26;
-  @darkBlue:              #202f3c;
-  @blue:                  #1c415e;
-  @lightBlue:             #a9c2d7;
-  @lighterBlue:           #cfe6f8;
-  @lightestBlue:          #e7f2fb;
+  @darkestGreen:           darken(@green, 50%);
+  @darkGreen:              darken(@green, 25%);
+  @green:                  #0f0;
+  @lightGreen:             lighten(@green, 25%);
+  @lighterGreen:           lighten(@green, 50%);
+  @lightestGreen:          lighten(@green, 75%);
 
+  @darkOrange:            darken(@orange, 25%);
+  @darkOrange:            darken(@orange, 25%);
   @orange:                #f30;
-  @midOrange:             #c34119;
-  @lightOrange:           #ffc9b3;
-  @lighterOrange:         #fddfd3;
-  @lightestOrange:        #fff0ea;
+  @lightOrange:           lighten(@orange, 25%);
+  @lighterOrange:         lighten(@orange, 25%);
+  @lightestOrange:        lighten(@orange, 25%);
 
 
 
