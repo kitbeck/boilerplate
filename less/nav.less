@@ -82,6 +82,7 @@
 
 @media only screen and (max-width: 768px) {
 	.menu{
+		min-height: 180px;
 		background: #ffffff;
 		.box-shadow();
 	}
@@ -98,15 +99,16 @@
 	}
 	
 	.toggle:after {
-		content: 'Menu';
+		content: '\2630'; // must be escaped unicode hex
 		display: block;
 		width: 100px;
 		margin: 14px;
 		padding: 14px;
 		background: @orange;
 		text-align: center;
-		font-size: 16px;
+		font-size: 80px;
 		color: #ffffff;
+		float: right;
 	}
 	
 	.toggle:hover:after {
@@ -114,7 +116,7 @@
 	}
 	
 	#toggle:checked + .toggle:after {
-		content: 'Close';
+		content: '\274C';
 	}
 }
 
