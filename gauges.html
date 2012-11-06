@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Gauges</title>
+		
+		<link rel="stylesheet" href="css/default.css" type="text/css" media="screen">
+
+		<!-- javascript libs- use loader like require.js -->
+		<script type="text/javascript" src="libs/raphael.2.1.0.min.js"></script>
+		<script type="text/javascript" src="libs/justgage.1.0.1.min.js"></script>
+		<!-- custom javascript -->
+		<script type="text/javascript" src="js/main.js"></script>
+		<script>
+			var g1, g2, g3, g4;
+			window.onload = function() {
+				var g1 = new JustGage({
+					id: "g1", 
+					value: getRandomInt(0, 100), 
+					min: 0,
+					max: 100,
+					title: "Voltage",
+					label: "Volts"
+				});
+				var g2 = new JustGage({
+					id: "g2", 
+					value: getRandomInt(0, 100), 
+					min: 0,
+					max: 100,
+					title: "Current",
+					label: "Amps"
+				});
+				var g3 = new JustGage({
+					id: "g3", 
+					value: getRandomInt(0, 100), 
+					min: 0,
+					max: 100,
+					title: "Resistance",
+					label: "Ohms"
+				});
+				var g4 = new JustGage({
+					id: "g4", 
+					value: getRandomInt(0, 100), 
+					min: 0,
+					max: 100,
+					title: "Capacitance",
+					label: "Farads"
+				});
+				setInterval(function() {
+					g1.refresh(getRandomInt(0, 100));
+					g2.refresh(getRandomInt(0, 100));          
+					g3.refresh(getRandomInt(0, 100));
+					g4.refresh(getRandomInt(0, 100));
+				}, 4000);
+			};
+		</script>
+	</head>
+	
+	<body>
+	
+
+		<div class="header span-1"><!-- change to header element -->
+			<input type='checkbox' id='toggle' />
+			<label for='toggle' class='toggle'></label>
+			<ul class="menu">
+	        	<li><a href="#">Google</a></li>
+	        	<li><a href="#">Facebook</a></li>
+	        	<li><a href="#">Youtube</a></li>
+	        	<li><a href="#">Twitter</a></li> 
+	        </ul>
+		</div><!--/ .header -->
+
+		<div class="row row-pad">
+			<div class="span-1">
+				<h1>Gauges</h1>
+				<h2>Small</h2>
+			</div>
+		</div>
+		
+		<div class="row row-pad">
+			<div class="span-1-4">
+				<div id="g1"><!-- null --></div>
+			</div>
+			<div class="span-1-4">
+				<div id="g2"><!-- null --></div>
+			</div>
+			<div class="span-1-4">
+				<div id="g3"><!-- null --></div>
+			</div>
+			<div class="span-1-4">
+				<div id="g4"><!-- null --></div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
+
