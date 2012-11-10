@@ -3,14 +3,26 @@
 <html>
 
 	<head>
+	
 		<title>Fluid Grid</title>
+		
+		<!-- styles -->
 		<link rel="stylesheet" href="css/default.css" type="text/css" media="screen">
+		<!-- javascript -->
+		<script type="text/javascript" src="js/jquery.1.8.2.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<!-- javascript libs- use loader like require.js -->
+		<script type="text/javascript" src="libs/raphael.2.1.0.js"></script>
+		<script type="text/javascript" src="libs/justgauge.js"></script>
+		<script type="text/javascript" src="libs/jquery.knob.1.2.0.js"></script>
+	
 	</head>
 	
 	<body>
 	
 
 		<div class="header span-1"><!-- change to header element -->
+	
 			<input type='checkbox' id='toggle' />
 			<label for='toggle' class='toggle'></label>
 			<ul class="menu">
@@ -626,14 +638,6 @@
 				</div>
 			</div>
 		</div><!--/ .row -->
-		
-		<div id="gauge" class="200x160px"></div>
-		
-		<!-- javascript libs- use loader like require.js -->
-		<script type="text/javascript" src="libs/js/raphael.2.1.0.js"></script>
-		<script type="text/javascript" src="libs/js/justgauge.js"></script>
-		
-		<script type="text/javascript" src="js/main.js"></script>
 
 	</body>
 
