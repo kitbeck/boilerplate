@@ -36,9 +36,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-body {
-  margin: 0px;
-}
 [class*='span-'] {
   float: left;
   padding-right: 14px;
@@ -923,6 +920,13 @@ select:focus {
     margin-right: 14px;
     text-align: center;
   }
+}
+body.dark {
+  background: #000;
+}
+label,
+legend {
+  color: #fff;
 }
 .content {
   padding: 7px;

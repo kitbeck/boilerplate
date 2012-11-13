@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<title>Knobs</title>
+		
+		<!-- styles -->
+		<link rel="stylesheet" href="css/default.css" type="text/css" media="screen">
+		<!-- javascript -->
+		<script type="text/javascript" src="js/jquery.1.8.2.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<!-- javascript libs- use loader like require.js -->
+		<script type="text/javascript" src="libs/raphael.2.1.0.min.js"></script>
+		<script type="text/javascript" src="libs/justgage.1.0.1.min.js"></script>
+		<script type="text/javascript" src="libs/jquery.kontrol.js"></script>
+
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+	</head>
+	
+	<body class="dark">
+
+		<div class="header span-1"><!-- change to header element -->
+			<a href="#" class="brand">Thirteen Amp</a>
+			<input type='checkbox' id='toggle' />
+			<label for='toggle' class='toggle'></label>
+			<ul class="menu">
+	        	<li><a href="#">Google</a></li>
+	        	<li><a href="#">Facebook</a></li>
+	        	<li><a href="#">Youtube</a></li>
+	        	<li><a href="#">Twitter</a></li> 
+	        </ul>
+		</div><!--/ .header -->
+
+		<div class="row row-pad">
+			<div class="span-1">
+				<h1>Knobs</h1>
+			</div>
+		</div>
+		
+		<div class="row row-pad">
+			<div class="span-1-4">
+				<label for="ch1" class="dr">Channel 1</label>
+				<input type="text" name="ch1" value="0" class="gain" />
+			</div>
+			<div class="span-1-4">
+				<label for="ch2" class="dr">Channel 2</label>
+				<input type="text" name="ch2" value="0" class="gain" />
+			</div>
+			<div class="span-1-4">
+				<label for="ch3" class="dr">Channel 3</label>
+				<input type="text" name="ch3" value="0" class="gain" />
+			</div>
+			<div class="span-1-4">
+				<label for="ch4" class="dr">Channel 4</label>
+				<input type="text" name="ch4" value="0" class="gain" />
+			</div>
+		</div>
+		<br /><br />
+		<div class="row row-pad">
+			<div class="span-1-1">
+				<fieldset class="eq" data-width="1440" data-cols="31" data-min="-100" data-max="100">
+                    <input value="15">
+                    <input value="13">
+                    <input value="11">
+                    <input value="9">
+                    <input value="7">
+                    <input value="5">
+                    <input value="3">
+                    <input value="1">
+                    <input value="-1">
+                    <input value="-3">
+                    <input value="-5">
+                    <input value="-7">
+                    <input value="-9">
+                    <input value="-11">
+                    <input value="-13">
+                    <input value="-15">
+                    <input value="-13">
+                    <input value="-11">
+                    <input value="-9">
+                    <input value="-7">
+                    <input value="-5">
+                    <input value="-3">
+                    <input value="-1">
+                    <input value="1">
+                    <input value="3">
+                    <input value="5">
+                    <input value="7">
+                    <input value="9">
+                    <input value="11">
+                    <input value="13">
+                    <input value="15">
+                </fieldset>
+			</div>
+		</div>
+		
+	</body>
+
+</html>
+
