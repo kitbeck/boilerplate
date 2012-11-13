@@ -627,6 +627,7 @@ select[multiple] {
 select:focus {
   border: 1px solid #999999;
 }
+/* styles below need to be merged with grid.less and rename grid.less to responsive.less ?? - remove grid in this file ??
 /* ==========================================================================
 /* 2.0 - Grid Layout (Responsive)
    ========================================================================== */
