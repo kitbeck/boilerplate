@@ -499,7 +499,8 @@ table {
   src: url('../font/entypo/entypo.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
    url('../font/entypo/entypo.woff') format('woff'), /* Modern Browsers */
    url('../font/entypo/entypo.ttf') format('truetype'), /* Safari, Android, iOS */
-   url('../font/entypo/entypo.svg#svgFontName') format('svg');/* IE9 Compat Modes */
+   url('../font/entypo/entypo.svg#svgFontName') format('svg');/* change to fontello */
+  /* IE9 Compat Modes */
   /* Legacy iOS */
 }
 @font-face {
@@ -637,7 +638,7 @@ body {
 }
 /* Links */
 a {
-  color: #ff3300;
+  color: #1a1a1a;
   text-decoration: underline;
 }
 a:visited {
@@ -647,7 +648,7 @@ a:hover {
   text-decoration: none;
 }
 a:active {
-  color: #333333;
+  color: #1a1a1a;
 }
 /* 1.1 Headings - h1, h2, h3, h4, h5, h6 & other (if any)
    ========================================================================== */
@@ -664,19 +665,19 @@ h1 {
   margin: 14px 0 14px 0;
 }
 h2 {
-  font-size: 1.5em;
+  font-size: 1.5714285714285714em;
   margin: 14px 0 14px 0;
 }
 h3 {
-  font-size: 1em;
+  font-size: 1.2857142857142858em;
   margin: 14px 0 14px 0;
 }
 h4 {
-  font-size: 0.5em;
+  font-size: 1.1428571428571428em;
   margin: 14px 0 14px 0;
 }
 h5 {
-  font-size: 0.5em;
+  font-size: 1em;
   margin: 14px 0 14px 0;
 }
 h6 {
@@ -861,7 +862,7 @@ dl dd {
 /* 1.5 Forms, Labels and Inputs
    ========================================================================== */
 legend {
-  font-size: 1.5em;
+  font-size: 1.5714285714285714em;
   font-family: "Georgia", "Times New Roman", sans-serif;
   font-weight: bold;
   display: block;
@@ -1253,6 +1254,27 @@ select:focus {
     width: auto;
     text-align: center;
   }
+}
+a.btn {
+  display: inline-block;
+  padding: 14px 21px;
+  text-decoration: none;
+  font-size: 1.2857142857142858em;
+  line-height: 21px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+a.btn:visited {
+  color: #ffffff;
+}
+a.btn-success {
+  background: #00e600;
+  color: #ffffff;
+}
+a.btn-warning {
+  background: #e62e00;
+  color: #ffffff;
 }
 body.dark {
   background: #000;

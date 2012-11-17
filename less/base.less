@@ -11,7 +11,7 @@
   // Typography
   
   @font-face {
-	font-family: 'entypo';
+	font-family: 'entypo'; /* change to fontello */
 	src: url('../font/entypo/entypo.eot'); /* IE9 Compat Modes */
 	src: url('../font/entypo/entypo.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
 	     url('../font/entypo/entypo.woff') format('woff'), /* Modern Browsers */
@@ -37,10 +37,10 @@
   @defaultFontSize:       14;
   @fontDefault:           @defaultFontSize / 16 * 100%; // works out your base font size in percent
 
-  @42px:                  42 / @defaultFontSize * 1em;
-  @35px:                  35 / @defaultFontSize * 1em;
   @28px:                  28 / @defaultFontSize * 1em;
-  @21px:                  21 / @defaultFontSize * 1em;
+  @22px:                  22 / @defaultFontSize * 1em;
+  @18px:                  18 / @defaultFontSize * 1em;
+  @16px:                  16 / @defaultFontSize * 1em;
   @14px:				  14 / @defaultFontSize * 1em;
   @7px:					  7  / @defaultFontSize * 1em;	
   
@@ -48,23 +48,25 @@
   @headingFont:           "Georgia", "Times New Roman", sans-serif;
 
   @h1:                    @28px;
-  @h2:                    @21px;
-  @h3:                    @14px;
-  @h4:                    @7px;
-  @h5:					  @7px;
+  @h2:                    @22px;
+  @h3:                    @18px;
+  @h4:                    @16px;
+  @h5:					  @14px;
   @h6:					  @7px;
 
   // Colours
 
-  @black:                 #000;
-  @darkestGrey:           lighten(@black, 10%);
-  @darkerGrey:            lighten(@black, 20%);
-  @darkGrey:              lighten(@black, 30%);
-  @grey:                  lighten(@black, 40%);
-  @lightGrey:             lighten(@black, 50%);
-  @lighterGrey:           lighten(@black, 60%);
-  @lightestGrey:          lighten(@black, 70%);
-  @white:                 #fff;
+  @black: 				#000;
+  @black10:           	lighten(@black, 10%);
+  @black20:           	lighten(@black, 20%);
+  @black30:             lighten(@black, 30%);
+  @black40:             lighten(@black, 40%);
+  @black50:             lighten(@black, 50%);
+  @black60:           	lighten(@black, 60%);
+  @black70:         	lighten(@black, 70%);
+  @black80:          	lighten(@black, 80%);
+  @black90:          	lighten(@black, 90%);
+  @white:               #fff;
 
   @darkestGreen:           darken(@green, 10%);
   @darkGreen:              darken(@green, 5%);
@@ -153,7 +155,7 @@ body {
   font-family: @fontBase;
   font-family: @fontGlyph;
   background: @white;
-  color: @darkestGrey;
+  color: @black10;
   margin: 0 0 21px 0;
   font-size: @fontDefault;
   line-height: 140%;
@@ -162,7 +164,7 @@ body {
 }
 /* Links */
 a {
-  color: @orange;
+  color: @black10;
   text-decoration: underline;
 }
 a:visited {
@@ -172,7 +174,7 @@ a:hover {
   text-decoration: none;
 }
 a:active {
-  color: @darkerGrey;
+  color: @black10;
 }
 
 

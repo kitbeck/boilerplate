@@ -5,13 +5,13 @@ $(document).ready(function() {
 	$(".dial_green").dial({
 		"min":0,
 		"max":100,
-		"fgColor":"#00ff00"
+		"fgColor": "#00e600"
 	});
 	
 	$(".dial_orange").dial({
 		"min": 0,
 		"max": 100,
-		"fgColor": "#f30"
+		"fgColor": "#e62e00"
 	});
 	
 	$(".gain").dial({
