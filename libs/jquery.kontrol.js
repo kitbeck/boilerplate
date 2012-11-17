@@ -606,7 +606,7 @@
                         ,'background' : 'none'
                         ,'font' : 'bold ' + ((this.o.width / s) >> 0) + 'px Arial'
                         ,'text-align' : 'center'
-                        ,'color' : '#fff' // this.o.fgColor
+                        ,'color' : '#000' // this.o.fgColor ... sort this out so can have different colours for ring and center text
                         ,'padding' : '0px'
                         ,'-webkit-appearance': 'none'
                         })

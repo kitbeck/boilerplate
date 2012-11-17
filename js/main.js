@@ -2,13 +2,13 @@ var console;
 
 $(document).ready(function() {
 
-	$(".dial_green").knob({
+	$(".dial_green").dial({
 		"min":0,
 		"max":100,
 		"fgColor":"#00ff00"
 	});
 	
-	$(".dial_orange").knob({
+	$(".dial_orange").dial({
 		"min": 0,
 		"max": 100,
 		"fgColor": "#f30"
@@ -18,7 +18,7 @@ $(document).ready(function() {
 		"min": -30,
 		"max": 15,
 		"bgColor": "#555",
-		"fgColor": "#eeff00",
+		"fgColor": "#f2ff60",
 		"width": 200,
 		"thickness": 0.3, // thickness: knob band thickness - 0 -> 1
 		"angleOffset": 220,
@@ -34,7 +34,7 @@ $(document).ready(function() {
 	$(".eq").bars({
 		"min": -15,
 		"max": 15,
-        "fgColor": "#eeff00",
+        "fgColor": "#f2ff60",
         "bgColor": "#555",
         "cursor": false,
         "displayPrevious": true

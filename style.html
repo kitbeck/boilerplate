@@ -7,30 +7,31 @@
 		<title>Fluid Grid</title>
 		
 		<!-- styles -->
-		<link rel="stylesheet" href="css/default.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="css/default.css">
 		<!-- javascript -->
-		<script type="text/javascript" src="js/jquery.1.8.2.min.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		<script src="js/jquery.1.8.2.min.js"></script>
+		<script src="js/main.js"></script>
 		<!-- javascript libs- use loader like require.js -->
-		<script type="text/javascript" src="libs/raphael.2.1.0.min.js"></script>
-		<script type="text/javascript" src="libs/justgage.1.0.1.min.js"></script>
-		<script type="text/javascript" src="libs/jquery.knob.1.2.0.js"></script>
+		<script src="libs/jquery.kontrol.js"></script>
 		
 		<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
 	
 	</head>
 	
 	<body>
-	
 
-		<div class="header span-1"><!-- change to header element -->
+		<div class="header"><!-- change to header element -->
 			<div class="row row-pad">
-				<div class="span-1-2">
+				<div class="span-1-3">
 					<a href="#" class="brand">Thirteen Amp</a>
+					<span class="tagline">Electrical Safety For Everyone</span>
 				</div><!--/ .span -->
-				<div class="span-1-2">
+				<div class="span-2-3">
 					<input type='checkbox' id='toggle' />
-					<label for='toggle' class='toggle'></label>
+					<label for='toggle' class='toggle'><!-- null --></label>
 					<ul class="menu">
 			        	<li><a href="#">Google</a></li>
 			        	<li><a href="#">Facebook</a></li>
@@ -50,7 +51,7 @@
 	
 		<div class="row row-pad">
 			<div class="span-1">
-				<div class="content">
+				<div class="content"><!-- do not need these content divs ... add extra class to span -->
 					<p>1</p>
 				</div>
 			</div>
@@ -646,6 +647,13 @@
 				</div>
 			</div>
 		</div><!--/ .row -->
+		
+		<div class="footer">
+			<div class="row row-pad">
+				<div class="span-1-1">
+				</div>
+			</div>
+		</div>
 
 	</body>
 

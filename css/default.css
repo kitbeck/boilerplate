@@ -375,7 +375,7 @@ table {
   width: 90%;
   max-width: 100%;
   min-width: 755px;
-  margin: 0 auto;
+  margin: 0 auto 21px auto;
   overflow: hidden;
 }
 .row:after {
@@ -660,23 +660,23 @@ h6 {
   margin: 0;
 }
 h1 {
-  font-size: 3em;
-  margin: 14px 0 14px 0;
-}
-h2 {
-  font-size: 2.5em;
-  margin: 14px 0 14px 0;
-}
-h3 {
   font-size: 2em;
   margin: 14px 0 14px 0;
 }
-h4 {
+h2 {
   font-size: 1.5em;
   margin: 14px 0 14px 0;
 }
-h5 {
+h3 {
   font-size: 1em;
+  margin: 14px 0 14px 0;
+}
+h4 {
+  font-size: 0.5em;
+  margin: 14px 0 14px 0;
+}
+h5 {
+  font-size: 0.5em;
   margin: 14px 0 14px 0;
 }
 h6 {
@@ -861,7 +861,7 @@ dl dd {
 /* 1.5 Forms, Labels and Inputs
    ========================================================================== */
 legend {
-  font-size: 2.5em;
+  font-size: 1.5em;
   font-family: "Georgia", "Times New Roman", sans-serif;
   font-weight: bold;
   display: block;
@@ -1159,20 +1159,26 @@ select:focus {
  Presentation Styles (Editable)
 ---------------------------------*/
 .header {
-  min-height: 100px;
-  height: 100%;
-  padding: 0;
-  background: #ffffff;
+  margin-bottom: 42px;
+  padding-bottom: 28px;
+  /* border-bottom: 1px solid @black; */
+
 }
 .header a.brand {
-  float: left;
-  padding-top: 28px;
+  display: block;
   text-decoration: none;
   font-family: days;
-  font-size: 36px;
+  font-size: 42px;
+  line-height: 42px;
   color: #ff3300;
 }
-.nav,
+.header .tagline {
+  font-size: 18px;
+}
+.header .tagline {
+  margin-left: 7px;
+}
+.header .nav,
 .menu {
   display: block;
   float: right;
@@ -1186,7 +1192,7 @@ select:focus {
 }
 .menu > li > a {
   display: block;
-  padding: 20px 20px;
+  padding: 14px;
   text-decoration: none;
   font-weight: normal;
   font-size: 16px;
@@ -1201,9 +1207,6 @@ select:focus {
   z-index: 2;
 }
 @media only screen and (max-width: 768px) {
-  .header {
-    display: block;
-  }
   .menu {
     min-height: 180px;
     background: #ffffff;
@@ -1223,7 +1226,6 @@ select:focus {
     content: '\2630';
     display: block;
     width: 100px;
-    margin: 14px;
     padding: 14px;
     background: #ff3300;
     text-align: center;
@@ -1249,7 +1251,6 @@ select:focus {
   }
   .toggle:after {
     width: auto;
-    margin-right: 14px;
     text-align: center;
   }
 }
@@ -1274,4 +1275,9 @@ legend {
   height: 240px;
   /* factor for correct ratio 1.25 */
 
+}
+.footer {
+  min-height: 200px;
+  margin-top: 42px;
+  background: #ff3300;
 }
