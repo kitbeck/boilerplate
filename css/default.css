@@ -1257,7 +1257,8 @@ select:focus {
 }
 a.btn {
   display: inline-block;
-  padding: 14px 21px;
+  min-width: 150px;
+  padding: 28px 14px;
   text-decoration: none;
   font-size: 1.2857142857142858em;
   line-height: 21px;
