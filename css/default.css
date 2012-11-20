@@ -1108,6 +1108,7 @@ select:focus {
   position: relative;
 }
 #toggle,
+#slide,
 .toggle {
   display: none;
 }
@@ -1257,7 +1258,7 @@ select:focus {
 }
 a.btn {
   display: inline-block;
-  min-width: 180px;
+  min-width: 150px;
   margin-left: 125px;
   padding: 28px 7px 7px 7px;
   text-decoration: none;
@@ -1269,12 +1270,13 @@ a.btn {
 a.btn:before {
   display: inline;
   position: relative;
-  right: 125px;
+  right: 90px;
   padding: 27px 21px 27px 21px;
   font-size: 1.2857142857142858em;
+  color: #000000;
   vertical-align: middle;
-  background: #000000;
-  content: '\2630';
+  background: #eee;
+  content: 'X';
 }
 a.btn:visited {
   color: #ffffff;
@@ -1285,6 +1287,10 @@ a.btn-success {
 }
 a.btn-warning {
   background: #e62e00;
+  color: #ffffff;
+}
+a.btn-warning:hover {
+  background: #cc2900;
   color: #ffffff;
 }
 body.dark {

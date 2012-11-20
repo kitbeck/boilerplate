@@ -1,6 +1,6 @@
 a.btn {
 	display: inline-block;
-	min-width: 180px;
+	min-width: 150px;
 	margin-left: 125px; padding: 28px 7px 7px 7px; 
 	text-decoration: none;
 	font-size: @18px;
@@ -9,12 +9,12 @@ a.btn {
 }
 
 a.btn:before {
-	display: inline; position: relative; right: 125px;
+	display: inline; position: relative; right: 90px;
 	padding: 27px 21px 27px 21px;
-	font-size: @18px;
+	font-size: @18px; color: @black;
 	vertical-align: middle;
-	background: @black;
-	content: '\2630';
+	background: #eee;
+	content: 'X';
 }
 
 a.btn:visited {
@@ -27,4 +27,8 @@ a.btn-success {
 
 a.btn-warning {
 	background: @darkOrange; color: @white;
+}
+
+a.btn-warning:hover {
+	background: @darkestOrange; color: @white;
 }
