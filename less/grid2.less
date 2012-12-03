@@ -1,0 +1,111 @@
+/* ////////////////////////////////////////////////////////////
+
+	boilerplate / grid2 less
+
+//////////////////////////////////////////////////////////// */
+
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
+}
+
+#pagewrap {
+	width: 1280px;
+	max-width: 96%;
+	margin: 0 auto;
+}
+.rows {
+	overflow: hidden;
+}
+
+/************************************************************************************
+colsUMN
+*************************************************************************************/
+.cols {
+	// background: #eee; 
+	float: left;
+	margin-left: 3.2%;
+	margin-bottom: 30px;
+	padding: 14px;
+}
+.fullwidth .cols {
+	float: none;
+	margin-left: 0;
+}
+/* span4 cols */
+.span4 .cols {
+	width: 22.6%;
+}
+/* span3 cols */
+.span3 .cols {
+	width: 31.2%;
+}
+/* span2 cols */
+.span2 .cols {
+	width: 48.4%;
+}
+/* clear cols */
+.span4 .cols:nth-of-type(4n+1),
+.span3 .cols:nth-of-type(3n+1),
+.span2 .cols:nth-of-type(2n+1) {
+	margin-left: 0;
+	clear: left;
+}
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* reset colss to 3-colsumn */
+@media screen and (max-width: 960px) {
+	/* span4 */
+	.span4 .cols {
+		width: 31.2%;
+	}
+	.span4 .cols:nth-of-type(4n+1) {
+		margin-left: 3.2%;
+		clear: none;
+	}
+	.span4 .cols:nth-of-type(3n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+}
+
+/* reset colss to 2-colsumn */
+@media screen and (max-width: 800px) {
+	/* span4 */
+	.span4 .cols {
+		width: 48.4%;
+	}
+	.span4 .cols:nth-of-type(3n+1) {
+		margin-left: 3.2%;
+		clear: none;
+	}
+	.span4 .cols:nth-of-type(2n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+
+	/* span3 */
+	.span3 .cols {
+		width: 48.4%;
+	}
+	.span3 .cols:nth-of-type(3n+1) {
+		margin-left: 3.2%;
+		clear: none;
+	}
+	.span3 .cols:nth-of-type(2n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+}
+
+/* reset colss to fullwidth */
+@media screen and (max-width: 480px) {
+	/* span4 */
+	.cols {
+		width: 100% !important;
+		margin-left: 0 !important;
+		clear: none !important;
+	}
+}
