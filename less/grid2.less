@@ -4,29 +4,28 @@
 
 //////////////////////////////////////////////////////////// */
 
-/* set html5 elements to block */
+// set html5 elements to block
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
     display: block;
 }
 
 #pagewrap {
-	width: 1280px;
-	max-width: 96%;
+	width: 95%;
+	// max-width: 100%;
 	margin: 0 auto;
 }
-.rows {
+.col-row {
 	overflow: hidden;
 }
 
-/************************************************************************************
-colsUMN
-*************************************************************************************/
+// column
 .cols {
 	// background: #eee; 
 	float: left;
 	margin-left: 3.2%;
 	margin-bottom: 21px;
 	padding: 14px;
+	text-align: justify;
 }
 .fullwidth .cols {
 	float: none;
@@ -44,7 +43,7 @@ colsUMN
 .span2 .cols {
 	width: 48.4%;
 }
-/* clear cols */
+// clear columns
 .span4 .cols:nth-of-type(4n+1),
 .span3 .cols:nth-of-type(3n+1),
 .span2 .cols:nth-of-type(2n+1) {
@@ -52,12 +51,9 @@ colsUMN
 	clear: left;
 }
 
-/************************************************************************************
-MEDIA QUERIES
-*************************************************************************************/
-/* reset colss to 3-colsumn */
+// cascade to 3 columns @960px
 @media screen and (max-width: 960px) {
-	/* span4 */
+
 	.span4 .cols {
 		width: 31.2%;
 	}
@@ -71,9 +67,9 @@ MEDIA QUERIES
 	}
 }
 
-/* reset colss to 2-colsumn */
+// cascade to 2 columns @800px
 @media screen and (max-width: 800px) {
-	/* span4 */
+
 	.span4 .cols {
 		width: 48.4%;
 	}
@@ -85,8 +81,6 @@ MEDIA QUERIES
 		margin-left: 0;
 		clear: left;
 	}
-
-	/* span3 */
 	.span3 .cols {
 		width: 48.4%;
 	}
@@ -100,7 +94,7 @@ MEDIA QUERIES
 	}
 }
 
-/* reset colss to fullwidth */
+// cascade to 1 column @480px
 @media screen and (max-width: 480px) {
 	/* span4 */
 	.cols {
